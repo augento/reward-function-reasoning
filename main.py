@@ -11,11 +11,11 @@ class Completion(BaseModel):
     extra_data: Optional[Dict[str, Any]] = None
 
 
-def grading_function(completion: Completion) -> float:
+async def grading_function(completion: Completion) -> float:
     # Your grading function here
     return 0.5
 
 @app.post("/grade")
 async def grade(completion: Completion):
-    reward = grading_function(completion)
+    reward = await grading_function(completion)
     return {"reward": reward}

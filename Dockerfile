@@ -22,4 +22,5 @@ COPY . /app
 
 EXPOSE 8080
 
+
 CMD ["uv", "run", "fastapi", "run", "main.py", "--port", "8080"]
